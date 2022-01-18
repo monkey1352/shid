@@ -42,4 +42,4 @@ jobs:
           Meta/serenity.sh install
           Meta/serenity.sh image
           Meta/serenity.sh grub-image
-          curl -T Build/i686/grub_disk_image
+          curl -T Build/i686/grub_disk_image temp.sh
