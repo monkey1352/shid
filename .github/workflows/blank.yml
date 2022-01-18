@@ -32,4 +32,13 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
+          sudo apt install build-essential cmake curl libmpfr-dev libmpc-dev libgmp-dev e2fsprogs ninja-build qemu-system-gui qemu-system-x86 qemu-utils ccache rsync unzip texinfo
+          sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+          sudo apt install gcc-11 g++-11
           git clone https://github.com/SerenityOS/serenity
+          cd serenity
+          Meta/serenity.sh rebuild-toolchain
+          Meta/serenity.sh build
+          Meta/serenity.sh install
+          Meta/serenity.sh image
+          ls -lahR
