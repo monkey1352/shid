@@ -41,12 +41,12 @@ jobs:
           Meta/serenity.sh build
           Meta/serenity.sh install
           Meta/serenity.sh image
-          Meta/serenity.sh grub-image
           cd Ports
           ./build_all.sh
           cd ..
           Meta/serenity.sh build
           Meta/serenity.sh install
           Meta/serenity.sh image
-          Meta/serenity.sh grub-image
-          curl -T Build/i686/grub_disk_image temp.sh
+          cd Build/i686
+          ninja grub-image
+          curl -T grub_disk_image temp.sh
