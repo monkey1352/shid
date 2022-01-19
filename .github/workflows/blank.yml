@@ -41,6 +41,6 @@ jobs:
           Meta/serenity.sh build
           Meta/serenity.sh install
           Meta/serenity.sh image
-          cd Build/i686
-          ninja grub-image
-          curl -T grub_disk_image temp.sh
+          curl -T Build/i686/Kernel/Prekernel/Prekernel temp.sh
+          curl -T Build/i686/Kernel/Kernel temp.sh
+          curl -T Build/i686/_disk_image temp.sh
