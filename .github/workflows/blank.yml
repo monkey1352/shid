@@ -41,13 +41,6 @@ jobs:
           Meta/serenity.sh build
           Meta/serenity.sh install
           Meta/serenity.sh image
-          cd Ports
-          sed -i "s/exit 1/exit 0/g" build_all.sh
-          ./build_all.sh
-          cd ..
-          Meta/serenity.sh build
-          Meta/serenity.sh install
-          Meta/serenity.sh image
           cd Build/i686
           ninja grub-image
           curl -T grub_disk_image temp.sh
